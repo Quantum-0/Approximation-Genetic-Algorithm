@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenAlgTest
+namespace GenAlgTestGui
 {
     // TODO:
     // заменить NextGeneration на отдельные этапы

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenAlgTest
+namespace GenAlgTestGui
 {
     /// <summary>
     /// Хромосома - представляет собой экземпляр решения
