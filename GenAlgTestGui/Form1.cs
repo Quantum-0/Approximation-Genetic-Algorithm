@@ -99,7 +99,7 @@ namespace GenAlgTestGui
             chart.Series.Add("Points").ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
 
             // Инициализация графиков решений
-            chart.Series.Add("Best");
+            chart.Series.Add("Best").ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             for (int i = 1; i < population.Lenght; i++)
                 chart.Series.Add("#" + (i+1)).ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 

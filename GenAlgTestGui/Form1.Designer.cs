@@ -238,7 +238,6 @@
             this.trackBarTimerInterval.TabIndex = 16;
             this.trackBarTimerInterval.Value = 6;
             this.trackBarTimerInterval.Scroll += new System.EventHandler(this.trackBarTimerInterval_Scroll);
-            this.trackBarTimerInterval.ValueChanged += new System.EventHandler(this.trackBarTimerInterval_ValueChanged);
             // 
             // label7
             // 
