@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridViewPoints = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@
             this.trackBarTimerInterval = new System.Windows.Forms.TrackBar();
             this.label7 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarTimerInterval)).BeginInit();
@@ -69,25 +69,37 @@
             this.dataGridViewPoints.Size = new System.Drawing.Size(125, 142);
             this.dataGridViewPoints.TabIndex = 1;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "X";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 50;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Y";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 50;
+            // 
             // chart
             // 
             this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea6.AxisX.Maximum = 5D;
-            chartArea6.AxisX.Minimum = -5D;
-            chartArea6.AxisY.Maximum = 20D;
-            chartArea6.AxisY.Minimum = -20D;
-            chartArea6.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart.Legends.Add(legend6);
+            chartArea1.AxisX.Maximum = 5D;
+            chartArea1.AxisX.Minimum = -5D;
+            chartArea1.AxisY.Maximum = 20D;
+            chartArea1.AxisY.Minimum = -20D;
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(12, 12);
             this.chart.Name = "chart";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chart.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart.Series.Add(series1);
             this.chart.Size = new System.Drawing.Size(675, 393);
             this.chart.TabIndex = 3;
             this.chart.Text = "chart1";
@@ -220,7 +232,8 @@
             "Ax² + Bx + C",
             "Ax^B + C",
             "Ax + B|x| + C",
-            "Ax + B"});
+            "Ax + B",
+            "A+B^x"});
             this.comboBoxTemplate.Location = new System.Drawing.Point(643, 415);
             this.comboBoxTemplate.Name = "comboBoxTemplate";
             this.comboBoxTemplate.Size = new System.Drawing.Size(175, 21);
@@ -259,18 +272,6 @@
             this.button5.Text = "Удалить точку";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "X";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 50;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Y";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 50;
             // 
             // Form1
             // 

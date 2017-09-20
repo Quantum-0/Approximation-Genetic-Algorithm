@@ -151,7 +151,7 @@ namespace GenAlgTestGui
             {
                 chart.Series[i + 1].Points.Clear();
                 var cur = population[i];
-                for (double j = -5; j <= -1; j += 0.2)
+                for (double j = chart.ChartAreas[0].AxisX.Minimum; j <= -1; j += 0.2)
                 {
                     j = Math.Round(j, 2);
                     chart.Series[i + 1].Points.AddXY(j, Function(j, cur.Gens));
@@ -162,7 +162,7 @@ namespace GenAlgTestGui
                     j = Math.Round(j, 3);
                     chart.Series[i + 1].Points.AddXY(j, Function(j, cur.Gens));
                 }
-                for (double j = 1; j <= 5; j += 0.2)
+                for (double j = 1; j <= chart.ChartAreas[0].AxisX.Maximum; j += 0.2)
                 {
                     j = Math.Round(j, 2);
                     chart.Series[i + 1].Points.AddXY(j, Function(j, cur.Gens));
@@ -179,6 +179,13 @@ namespace GenAlgTestGui
 
             for (int i = 0; i < points.Length; i++)
                 chart.Series[0].Points.AddXY(points[i].X, points[i].Y);
+
+            double w = points.Max(p => p.X) - points.Min(p => p.X);
+            double h = points.Max(p => p.Y) - points.Min(p => p.Y);
+            chart.ChartAreas[0].AxisX.Minimum = Math.Round(points.Min(p => p.X) - w / 5);
+            chart.ChartAreas[0].AxisX.Maximum = Math.Round(points.Max(p => p.X) + w / 5);
+            chart.ChartAreas[0].AxisY.Minimum = Math.Round(points.Min(p => p.Y) - h / 5);
+            chart.ChartAreas[0].AxisY.Maximum = Math.Round(points.Max(p => p.Y) + h / 5);
         }
 
         /// <summary>
@@ -249,6 +256,13 @@ namespace GenAlgTestGui
 
             switch (type)
             {
+                case 9:
+                    gensCount = 2;
+                    min = -4;
+                    max = 4;
+                    mutrange = 0.3;
+                    Function = (x, g) => g[0] + Math.Pow(g[1], x);
+                    break;
                 case 8:
                     gensCount = 2;
                     min = -5;
